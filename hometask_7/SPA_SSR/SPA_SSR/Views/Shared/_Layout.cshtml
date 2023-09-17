@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+</head>
+<body>
+    
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Content" asp-action="Contacts">
+                <img src="~/img/sys/contacts.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Contact Viwer v1.0
+            </a>
+        </div>
+    </nav>
+  
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

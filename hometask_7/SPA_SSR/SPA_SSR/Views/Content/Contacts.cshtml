@@ -1,0 +1,19 @@
+﻿@model SPA_SSR.Models.ContactProvider
+<div class="page-container">
+    <div class="card" style="width: 18rem;">
+        <img src=@Model.activeContact.getImgPath() class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Контакт #@Model.activeContact.getId()</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Имя: @Model.activeContact.getFirstName()</li>
+            <li class="list-group-item">Фамилия: @Model.activeContact.getLastName()</li>
+            <li class="list-group-item">Номер телефона: @Model.activeContact.getPhone()</li>
+            <li class="list-group-item">Примечание: @Model.activeContact.getComment()</li>
+        </ul>
+        <div class="card-body">
+            <a class="btn btn-primary" role="button" asp-controller="Content" asp-action="PrevContact">PREV</a>
+            <a class="btn btn-primary" role="button" asp-controller="Content" asp-action="NextContact">NEXT</a>
+        </div>
+    </div>
+</div>
