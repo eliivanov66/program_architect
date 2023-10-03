@@ -1,6 +1,6 @@
 ﻿namespace ClinicDesctop
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,28 +33,32 @@
             columnHeaderSurName = new ColumnHeader();
             columnHeaderFirstName = new ColumnHeader();
             columnHeaderPatronymic = new ColumnHeader();
-            btnUpdate = new Button();
-            listViewPets = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            listViewConsultations = new ListView();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
+            columnBirthDate = new ColumnHeader();
+            deleteButton = new Button();
+            process1 = new System.Diagnostics.Process();
+            birthdateInput = new DateTimePicker();
+            nameInput = new TextBox();
+            surnameInput = new TextBox();
+            patronymicInput = new TextBox();
+            addButton = new Button();
+            documentInput = new TextBox();
+            documentLabel = new Label();
+            nameLabel = new Label();
+            surnameLabel = new Label();
+            patronomycLabel = new Label();
+            birthdateLabel = new Label();
             SuspendLayout();
             // 
             // listViewClients
             // 
-            listViewClients.Columns.AddRange(new ColumnHeader[] { columnHeaderId, columnHeaderSurName, columnHeaderFirstName, columnHeaderPatronymic });
+            listViewClients.Columns.AddRange(new ColumnHeader[] { columnHeaderId, columnHeaderSurName, columnHeaderFirstName, columnHeaderPatronymic, columnBirthDate });
             listViewClients.FullRowSelect = true;
             listViewClients.GridLines = true;
             listViewClients.Location = new Point(14, 16);
             listViewClients.Margin = new Padding(3, 4, 3, 4);
             listViewClients.MultiSelect = false;
             listViewClients.Name = "listViewClients";
-            listViewClients.Size = new Size(886, 175);
+            listViewClients.Size = new Size(1014, 411);
             listViewClients.TabIndex = 1;
             listViewClients.UseCompatibleStateImageBehavior = false;
             listViewClients.View = View.Details;
@@ -67,106 +71,162 @@
             // columnHeaderSurName
             // 
             columnHeaderSurName.Text = "Фамилия";
-            columnHeaderSurName.Width = 300;
+            columnHeaderSurName.Width = 150;
             // 
             // columnHeaderFirstName
             // 
             columnHeaderFirstName.Text = "Имя";
-            columnHeaderFirstName.Width = 300;
+            columnHeaderFirstName.Width = 150;
             // 
             // columnHeaderPatronymic
             // 
             columnHeaderPatronymic.Text = "Отчество";
-            columnHeaderPatronymic.Width = 300;
+            columnHeaderPatronymic.Width = 150;
             // 
-            // btnUpdate
+            // columnBirthDate
             // 
-            btnUpdate.Location = new Point(358, 531);
-            btnUpdate.Margin = new Padding(3, 4, 3, 4);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(137, 69);
-            btnUpdate.TabIndex = 2;
-            btnUpdate.Text = "Обновить";
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
+            columnBirthDate.Text = "Дата рождения";
+            columnBirthDate.Width = 150;
             // 
-            // listViewPets
+            // deleteButton
             // 
-            listViewPets.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewPets.FullRowSelect = true;
-            listViewPets.GridLines = true;
-            listViewPets.Location = new Point(14, 199);
-            listViewPets.Margin = new Padding(3, 4, 3, 4);
-            listViewPets.MultiSelect = false;
-            listViewPets.Name = "listViewPets";
-            listViewPets.Size = new Size(886, 158);
-            listViewPets.TabIndex = 3;
-            listViewPets.UseCompatibleStateImageBehavior = false;
-            listViewPets.View = View.Details;
-            listViewPets.SelectedIndexChanged += listViewPets_SelectedIndexChanged;
+            deleteButton.Location = new Point(786, 435);
+            deleteButton.Margin = new Padding(3, 4, 3, 4);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(242, 27);
+            deleteButton.TabIndex = 5;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
-            // columnHeader1
+            // process1
             // 
-            columnHeader1.Text = "#";
+            process1.StartInfo.Domain = "";
+            process1.StartInfo.LoadUserProfile = false;
+            process1.StartInfo.Password = null;
+            process1.StartInfo.StandardErrorEncoding = null;
+            process1.StartInfo.StandardInputEncoding = null;
+            process1.StartInfo.StandardOutputEncoding = null;
+            process1.StartInfo.UserName = "";
+            process1.SynchronizingObject = this;
             // 
-            // columnHeader2
+            // birthdateInput
             // 
-            columnHeader2.Text = "Клиент";
-            columnHeader2.Width = 400;
+            birthdateInput.Location = new Point(539, 461);
+            birthdateInput.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            birthdateInput.Name = "birthdateInput";
+            birthdateInput.Size = new Size(241, 27);
+            birthdateInput.TabIndex = 6;
             // 
-            // columnHeader3
+            // nameInput
             // 
-            columnHeader3.Text = "Кличка";
-            columnHeader3.Width = 400;
+            nameInput.Location = new Point(146, 461);
+            nameInput.Name = "nameInput";
+            nameInput.Size = new Size(125, 27);
+            nameInput.TabIndex = 7;
             // 
-            // listViewConsultations
+            // surnameInput
             // 
-            listViewConsultations.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
-            listViewConsultations.FullRowSelect = true;
-            listViewConsultations.GridLines = true;
-            listViewConsultations.Location = new Point(16, 365);
-            listViewConsultations.Margin = new Padding(3, 4, 3, 4);
-            listViewConsultations.MultiSelect = false;
-            listViewConsultations.Name = "listViewConsultations";
-            listViewConsultations.Size = new Size(884, 158);
-            listViewConsultations.TabIndex = 4;
-            listViewConsultations.UseCompatibleStateImageBehavior = false;
-            listViewConsultations.View = View.Details;
-            listViewConsultations.SelectedIndexChanged += listViewConsultations_SelectedIndexChanged;
+            surnameInput.Location = new Point(277, 461);
+            surnameInput.Name = "surnameInput";
+            surnameInput.Size = new Size(125, 27);
+            surnameInput.TabIndex = 8;
             // 
-            // columnHeader4
+            // patronymicInput
             // 
-            columnHeader4.Text = "#";
+            patronymicInput.Location = new Point(408, 461);
+            patronymicInput.Name = "patronymicInput";
+            patronymicInput.Size = new Size(125, 27);
+            patronymicInput.TabIndex = 9;
             // 
-            // columnHeader5
+            // addButton
             // 
-            columnHeader5.Text = "Клиент";
-            columnHeader5.Width = 300;
+            addButton.Location = new Point(786, 461);
+            addButton.Margin = new Padding(3, 4, 3, 4);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(242, 27);
+            addButton.TabIndex = 10;
+            addButton.Text = "Добавить";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_click;
             // 
-            // columnHeader6
+            // documentInput
             // 
-            columnHeader6.Text = "Кличка";
-            columnHeader6.Width = 300;
+            documentInput.Location = new Point(15, 461);
+            documentInput.Name = "documentInput";
+            documentInput.Size = new Size(125, 27);
+            documentInput.TabIndex = 11;
             // 
-            // columnHeader7
+            // documentLabel
             // 
-            columnHeader7.Text = "Дата";
-            columnHeader7.Width = 300;
+            documentLabel.AutoSize = true;
+            documentLabel.Location = new Point(15, 438);
+            documentLabel.Name = "documentLabel";
+            documentLabel.Size = new Size(76, 20);
+            documentLabel.TabIndex = 12;
+            documentLabel.Text = "Документ";
             // 
-            // Form1
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(146, 438);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(39, 20);
+            nameLabel.TabIndex = 13;
+            nameLabel.Text = "Имя";
+            // 
+            // surnameLabel
+            // 
+            surnameLabel.AutoSize = true;
+            surnameLabel.Location = new Point(277, 438);
+            surnameLabel.Name = "surnameLabel";
+            surnameLabel.Size = new Size(73, 20);
+            surnameLabel.TabIndex = 14;
+            surnameLabel.Text = "Фамилия";
+            // 
+            // patronomycLabel
+            // 
+            patronomycLabel.AutoSize = true;
+            patronomycLabel.Location = new Point(408, 438);
+            patronomycLabel.Name = "patronomycLabel";
+            patronomycLabel.Size = new Size(72, 20);
+            patronomycLabel.TabIndex = 15;
+            patronomycLabel.Text = "Отчество";
+            // 
+            // birthdateLabel
+            // 
+            birthdateLabel.AutoSize = true;
+            birthdateLabel.Location = new Point(539, 438);
+            birthdateLabel.Name = "birthdateLabel";
+            birthdateLabel.Size = new Size(116, 20);
+            birthdateLabel.TabIndex = 16;
+            birthdateLabel.Text = "Дата рождения";
+            // 
+            // mainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1221, 610);
-            Controls.Add(listViewConsultations);
-            Controls.Add(listViewPets);
-            Controls.Add(btnUpdate);
+            ClientSize = new Size(1034, 497);
+            Controls.Add(birthdateLabel);
+            Controls.Add(patronomycLabel);
+            Controls.Add(surnameLabel);
+            Controls.Add(nameLabel);
+            Controls.Add(documentLabel);
+            Controls.Add(documentInput);
+            Controls.Add(addButton);
+            Controls.Add(patronymicInput);
+            Controls.Add(surnameInput);
+            Controls.Add(nameInput);
+            Controls.Add(birthdateInput);
+            Controls.Add(deleteButton);
             Controls.Add(listViewClients);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
+            Name = "mainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Моя клиника";
+            Load += mainForm_Update;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -177,14 +237,20 @@
         private ColumnHeader columnHeaderSurName;
         private ColumnHeader columnHeaderFirstName;
         private ColumnHeader columnHeaderPatronymic;
-        private ListView listViewPets;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ListView listViewConsultations;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
+        private Button btnDelete;
+        private Button deleteButton;
+        private ColumnHeader columnBirthDate;
+        private System.Diagnostics.Process process1;
+        private TextBox surnameInput;
+        private TextBox nameInput;
+        private DateTimePicker birthdateInput;
+        private TextBox patronymicInput;
+        private Button addButton;
+        private Label documentLabel;
+        private TextBox documentInput;
+        private Label nameLabel;
+        private Label birthdateLabel;
+        private Label patronomycLabel;
+        private Label surnameLabel;
     }
 }

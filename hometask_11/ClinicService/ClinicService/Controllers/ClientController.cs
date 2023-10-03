@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace ClinicService.Controllers
 {
     [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class ClientController : ControllerBase
     {
@@ -42,6 +43,7 @@ namespace ClinicService.Controllers
             int res = _clientRepository.Update(new Client
             {
                 ClientId = updateRequest.ClientId,
+                Document = updateRequest.Document,
                 SurName = updateRequest.SurName,
                 FirstName = updateRequest.FirstName,
                 Patronymic = updateRequest.Patronymic,
