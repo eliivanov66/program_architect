@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ClinicServiceTests",
+    "\\ClinicServiceTests\\bin",
+    "\\ClinicServiceTests\\bin\\Debug",
+    "\\ClinicServiceTests\\bin\\Debug\\net7.0",
+    "\\ClinicService\\Controllers",
+    "\\ClinicService\\Models",
+    "\\ClinicService\\Services",
+    "\\ClinicService\\Services\\Impl"
+  ],
+  "SelectedNode": "\\ClinicServiceTests",
+  "PreviewInSolutionExplorer": false
+}
